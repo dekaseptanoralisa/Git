@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">yourMovies</string>
+    <string name="movieTitle">JUDUL MOVIE</string>
+    <string name="movieDeskription">INI DESKRIPSI MOVIE</string>
 </resources>

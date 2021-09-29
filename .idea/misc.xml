@@ -3,8 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/activity_splash_screen.xml" value="0.22" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/drawable-anydpi/ic_home.xml" value="0.2203125" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/drawable/ic_home.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/activity_detail_movie.xml" value="0.18" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/activity_main.xml" value="0.10126582278481013" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/fragment_favorites.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/fragment_home.xml" value="0.10960144927536232" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/fragment_search.xml" value="0.15" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/item_movie.xml" value="0.18" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/menu/bottom_navigation.xml" value="0.20833333333333334" />
       </map>
     </option>
   </component>
