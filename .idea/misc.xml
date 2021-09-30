@@ -3,16 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/drawable-anydpi/ic_home.xml" value="0.2203125" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/drawable/ic_home.xml" value="0.1" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/activity_detail_movie.xml" value="0.18" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/activity_main.xml" value="0.10126582278481013" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/fragment_favorites.xml" value="0.1" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/fragment_home.xml" value="0.10960144927536232" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/fragment_search.xml" value="0.15" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/layout/item_movie.xml" value="0.18" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/menu/bottom_navigation.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/drawable/ic_favorites.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/drawable/ic_home.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/drawable/ic_search.xml" value="0.22552083333333334" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/activity_detail.xml" value="0.209375" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/activity_splash_screen.xml" value="0.22" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/fragment_favorites.xml" value="0.209375" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/fragment_home.xml" value="0.209375" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/fragment_search.xml" value="0.209375" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/list_film.xml" value="0.209375" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/list_item.xml" value="0.209375" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/menu/bottom_nav_menu.xml" value="0.209375" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/menu/bottom_navigation.xml" value="0.209375" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/menu/bottomnavigation_menu.xml" value="0.209375" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/menu/main_menu.xml" value="0.209375" />
       </map>
     </option>
   </component>

@@ -1,13 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="25dp">
+
+    <ImageView
+        android:id="@+id/imgMovie"
+        android:layout_width="150dp"
+        android:layout_height="175dp"
+        android:src="@drawable/squidgame" />
 
     <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:text="@string/judul_movie"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/sinopsis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:text="@string/sinopsis" />
+
+
+    <Button
+        android:id="@id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:layout_below="@+id/sinopsis"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/imgMovie"
+        android:onClick="showDetails"
+        android:text="Show Details" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sinopsis"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="210dp"
+        android:layout_toEndOf="@+id/imgMovie"
+        android:onClick="showDetails"
+        android:text="Show Details" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sinopsis"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="390dp"
+        android:layout_toEndOf="@+id/imgMovie"
+        android:onClick="showDetails"
+        android:text="Show Details" />
+
+    <ImageView
+        android:id="@+id/imgMovie2"
+        android:layout_width="150dp"
+        android:layout_height="175dp"
+        android:layout_below="@+id/imgMovie"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/nevertheless" />
+
+    <TextView
+        android:id="@+id/title2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sinopsis"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="200dp"
+        android:layout_toRightOf="@id/imgMovie2"
+        android:text="@string/judul_movie2"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/sinopsis2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title2"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@id/imgMovie"
+        android:text="@string/sinopsis2" />
+
+    <ImageView
+        android:id="@+id/imgMovie3"
+        android:layout_width="150dp"
+        android:layout_height="175dp"
+        android:layout_below="@+id/imgMovie2"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/tatb" />
+
+    <TextView
+        android:id="@+id/title3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="400dp"
+        android:layout_toRightOf="@id/imgMovie3"
+        android:text="@string/judul_movie3"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+    <TextView
+        android:id="@+id/sinopsis3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title3"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_toRightOf="@id/imgMovie3"
+        android:text="@string/sinopsis3" />
 
 </RelativeLayout>
