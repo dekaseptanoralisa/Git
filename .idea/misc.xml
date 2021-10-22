@@ -9,13 +9,17 @@
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22552083333333334" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/drawable/ic_search.xml" value="0.22552083333333334" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/activity_detail.xml" value="0.209375" />
-        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/activity_splash_screen.xml" value="0.22" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/content_main.xml" value="0.209375" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/fragment_favorites.xml" value="0.209375" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/fragment_home.xml" value="0.209375" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/fragment_search.xml" value="0.209375" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/item_drawer_main.xml" value="0.1038500506585613" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/list_film.xml" value="0.209375" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/list_item.xml" value="0.209375" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/main_nav_drawer.xml" value="0.5012468827930174" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/layout/main_toolbar.xml" value="0.1038500506585613" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/menu/bottom_nav_menu.xml" value="0.209375" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/menu/bottom_navigation.xml" value="0.209375" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git/app/src/main/res/menu/bottomnavigation_menu.xml" value="0.209375" />

@@ -8,7 +8,7 @@
         android:id="@+id/imgMovie"
         android:layout_width="150dp"
         android:layout_height="175dp"
-        android:src ="@drawable/squidgame"/>
+        android:src="@drawable/squidgame" />
 
     <TextView
         android:id="@+id/title"
@@ -17,7 +17,7 @@
         android:layout_marginStart="16dp"
         android:layout_toRightOf="@id/imgMovie"
         android:textSize="16dp"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:text="@string/judul_movie" />
 
     <TextView
@@ -28,5 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
+        android:textColor="@color/white"
         android:text="@string/sinopsis" />
 </RelativeLayout>

@@ -1,12 +1,10 @@
 package com.example.git;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import android.os.Bundle;
-import android.view.MenuItem;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import android.view.Menu;
+import android.view.View;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,37 +13,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        View toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar((androidx.appcompat.widget.Toolbar) toolbar);
 
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                    new HomeFragment()).commit();
+        TextView toolbarText = (TextView) findViewById(R.id.toolbar_text);
+        if(toolbarText!=null && toolbar!=null) {
+            toolbarText.setText(getTitle());
         }
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
-            new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Fragment selectedFragment = null;
-
-                    switch (item.getItemId()) {
-                        case R.id.nav_home:
-                            selectedFragment = new HomeFragment();
-                            break;
-                        case R.id.nav_favorites:
-                            selectedFragment = new FavoritesFragment();
-                            break;
-                        case R.id.nav_search:
-                            selectedFragment = new SearchFragment();
-                            break;
-                    }
-
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
-
-                    return true;
-                }
-            };
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 }
