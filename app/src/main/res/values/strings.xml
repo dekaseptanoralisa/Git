@@ -1,10 +1,15 @@
 <resources>
     <string name="app_name">yourMovies</string>
+    <string name="movies_shows_most_popular">Movies Shows | Most Popular</string>
     <string name="movieTitle">Squid Game</string>
     <string name="movieDeskription">INI DESKRIPSI MOVIE</string>
     <string name="judul_movie">JUDUL MOVIE</string>
+    <string name="sinopsis">Tells the story of a group of 456 people who are invited to risk their lives in a mysterious survival game with a ₩45.6 billion (US$38.7 million) prize.</string>
     <string name="judul">JUDUL</string>
     <string name="sinopsistitle"></string>
     <string name="isi_sinopsis">INI ISI SINOPSIS</string>
-    <string name="sinopsis">blablabla</string>
+    <string name="judul_movie2">Neverthless</string>
+    <string name="judul_movie3">To All The Boys I Loved Before</string>
+    <string name="sinopsis2">An uncertain romance begins between a heartbroken woman who no longer believes in love and a flirtatious man who does not want to commit to a relationship.</string>
+    <string name="sinopsis3">A teenage girl\'s secret love letters are exposed and wreak havoc on her love life. </string>
 </resources>
