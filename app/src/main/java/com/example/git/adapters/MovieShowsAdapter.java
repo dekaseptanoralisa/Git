@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.git.R;
 import com.example.git.databinding.ItemContainerMovieShowBinding;
+import com.example.git.listeners.MovieShowsListener;
 import com.example.git.models.MovieShow;
 
 import java.util.List;
@@ -17,9 +18,12 @@ import java.util.List;
 public class MovieShowsAdapter extends RecyclerView.Adapter<MovieShowsAdapter.MovieShowViewHolder>{
     private List<MovieShow> movieShows;
     private LayoutInflater layoutInflater;
+    private MovieShowsListener movieShowsListener;
 
-    public MovieShowsAdapter(List<MovieShow> movieShows) {
+    public MovieShowsAdapter(List<MovieShow> movieShows, MovieShowsListener movieShowsListener) {
+
         this.movieShows = movieShows;
+        this.movieShowsListener = movieShowsListener;
     }
 
     @NonNull
@@ -43,7 +47,7 @@ public class MovieShowsAdapter extends RecyclerView.Adapter<MovieShowsAdapter.Mo
         return movieShows.size();
     }
 
-    static class MovieShowViewHolder extends RecyclerView.ViewHolder{
+    class MovieShowViewHolder extends RecyclerView.ViewHolder{
 
         private ItemContainerMovieShowBinding itemContainerMovieShowBinding;
 
@@ -55,6 +59,8 @@ public class MovieShowsAdapter extends RecyclerView.Adapter<MovieShowsAdapter.Mo
         public void bindMovieShow(MovieShow movieShow){
             itemContainerMovieShowBinding.setMovieShow(movieShow);
             itemContainerMovieShowBinding.executePendingBindings();
+            itemContainerMovieShowBinding.getRoot().setOnClickListener(view -> movieShowsListener.onMovieShowsClicked(movieShow));
+
         }
     }
 }

@@ -7,18 +7,20 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.git.R;
 import com.example.git.adapters.MovieShowsAdapter;
 import com.example.git.databinding.ActivityMainBinding;
+import com.example.git.listeners.MovieShowsListener;
 import com.example.git.models.MovieShow;
 import com.example.git.viewmodels.MostPopularMovieShowsViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MovieShowsListener {
     private ActivityMainBinding activityMainBinding;
     private MostPopularMovieShowsViewModel viewModel;
     private List<MovieShow> movieShows = new ArrayList<>();
@@ -36,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private void doInitialization(){
         activityMainBinding.movieShowsRecyclerView.setHasFixedSize(true);
         viewModel = new ViewModelProvider(this).get(MostPopularMovieShowsViewModel.class);
-        movieShowsAdapter = new MovieShowsAdapter(movieShows);
+        movieShowsAdapter = new MovieShowsAdapter(movieShows, this);
         activityMainBinding.movieShowsRecyclerView.setAdapter(movieShowsAdapter);
         activityMainBinding.movieShowsRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
@@ -85,4 +87,15 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onMovieShowsClicked(MovieShow movieShow) {
+        Intent intent = new Intent(getApplicationContext(), MovieDetailsActivity.class);
+        intent.putExtra("id", movieShow.getId());
+        intent.putExtra("name", movieShow.getName());
+        intent.putExtra("StartDate", movieShow.getStartDate());
+        intent.putExtra("country", movieShow.getCountry());
+        intent.putExtra("network", movieShow.getNetwork());
+        intent.putExtra("status", movieShow.getStatus());
+        startActivity(intent);
+    }
 }
