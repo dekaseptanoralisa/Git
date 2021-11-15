@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.example.git.R;
 import com.example.git.adapters.ImageSliderAdapter;
@@ -32,6 +31,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 
     private void doIntialization() {
         movieDetailsViewModel = new ViewModelProvider(this).get(MovieDetailsViewModel.class);
+        activityMovieDetailsBinding.imageBack.setOnClickListener(view -> onBackPressed());
         getMovieDetails();
     }
 
@@ -45,6 +45,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
                         if(movieDetailsResponse.getMovieDetails().getPictures() !=null){
                             loadImageSlider(movieDetailsResponse.getMovieDetails().getPictures());
                         }
+                        activityMovieDetailsBinding.setMovieImageURL(
+                                movieDetailsResponse.getMovieDetails().getImagePath()
+                        );
+                        activityMovieDetailsBinding.imageMovieShow.setVisibility((View.VISIBLE));
+                        loadBasicMovieShowDetails();
                     }
                 }
         );
@@ -98,5 +103,17 @@ public class MovieDetailsActivity extends AppCompatActivity {
                 );
             }
         }
+    }
+    private void loadBasicMovieShowDetails(){
+        activityMovieDetailsBinding.setMovieName(getIntent().getStringExtra("name"));
+        activityMovieDetailsBinding.setNetworkCountry(
+                getIntent().getStringExtra("network")+ "(" +
+                        getIntent().getStringExtra("country") + ")"
+        );
+        activityMovieDetailsBinding.setStatus(getIntent().getStringExtra("status"));
+        activityMovieDetailsBinding.setStartedDate(getIntent().getStringExtra("startDate"));
+        activityMovieDetailsBinding.textName.setVisibility(View.VISIBLE);
+        activityMovieDetailsBinding.textNetworkCountry.setVisibility(View.VISIBLE);
+        activityMovieDetailsBinding.textStatus.setVisibility(View.VISIBLE);
     }
 }
