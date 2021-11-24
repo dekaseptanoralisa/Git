@@ -293,7 +293,6 @@
                         android:text="@{runtime}"
                         android:textColor="@color/colorTextIcon"
                         android:textSize="@dimen/_12ssp" />
-
                 </LinearLayout>
 
                 <View
