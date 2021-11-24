@@ -2,11 +2,15 @@ package com.example.git.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import androidx.core.text.HtmlCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -15,7 +19,10 @@ import android.widget.LinearLayout;
 import com.example.git.R;
 import com.example.git.adapters.ImageSliderAdapter;
 import com.example.git.databinding.ActivityMovieDetailsBinding;
+import com.example.git.responses.MovieDetailsResponse;
 import com.example.git.viewmodels.MovieDetailsViewModel;
+
+import java.util.Locale;
 
 public class MovieDetailsActivity extends AppCompatActivity {
 
@@ -49,7 +56,44 @@ public class MovieDetailsActivity extends AppCompatActivity {
                                 movieDetailsResponse.getMovieDetails().getImagePath()
                         );
                         activityMovieDetailsBinding.imageMovieShow.setVisibility((View.VISIBLE));
-                        loadBasicMovieShowDetails();
+                        activityMovieDetailsBinding.setDescription(
+                                String.valueOf(
+                                        HtmlCompat.fromHtml(
+                                                movieDetailsResponse.getMovieDetails().getDescription(),
+                                                HtmlCompat.FROM_HTML_MODE_LEGACY
+                                        )
+                                )
+                        );
+                        activityMovieDetailsBinding.textDescription.setVisibility(View.VISIBLE);
+                        activityMovieDetailsBinding.textReadMore.setVisibility(View.VISIBLE);
+                        activityMovieDetailsBinding.textReadMore.setOnClickListener(view->{
+                                if (activityMovieDetailsBinding.textReadMore.getText().toString().equals("Read More")) {
+                                    activityMovieDetailsBinding.textDescription.setMaxLines(Integer.MAX_VALUE);
+                                    activityMovieDetailsBinding.textDescription.setEllipsize(null);
+                                    activityMovieDetailsBinding.textReadMore.setText(R.string.read_less);
+                                } else {
+                                    activityMovieDetailsBinding.textDescription.setMaxLines(4);
+                                    activityMovieDetailsBinding.textDescription.setEllipsize(TextUtils.TruncateAt.END);
+                                    activityMovieDetailsBinding.textReadMore.setText(R.string.read_more);
+                                }
+                        });
+                        activityMovieDetailsBinding.setRating(
+                                String.format(
+                                        Locale.getDefault(),
+                                        "%.2f",
+                                        Double.parseDouble(movieDetailsResponse.getMovieDetails().getRating())
+                                )
+                        );
+                        if (movieDetailsResponse.getMovieDetails().getGenres() != null){
+                            activityMovieDetailsBinding.setGenre(movieDetailsResponse.getMovieDetails().getGenres()[0]);
+                        }else{
+                            activityMovieDetailsBinding.setGenre("N/A");
+                            }
+                            activityMovieDetailsBinding.setRuntime(movieDetailsResponse.getMovieDetails().getRuntime() +"Min");
+                            activityMovieDetailsBinding.viewDivider1.setVisibility(View.VISIBLE);
+                            activityMovieDetailsBinding.layoutMisc.setVisibility(View.VISIBLE);
+                            activityMovieDetailsBinding.viewDivider2.setVisibility(View.VISIBLE);
+                            loadBasicMovieShowDetails();
                     }
                 }
         );
@@ -111,9 +155,10 @@ public class MovieDetailsActivity extends AppCompatActivity {
                         getIntent().getStringExtra("country") + ")"
         );
         activityMovieDetailsBinding.setStatus(getIntent().getStringExtra("status"));
-        activityMovieDetailsBinding.setStartedDate(getIntent().getStringExtra("startDate"));
+        activityMovieDetailsBinding.setStartedDate(getIntent().getStringExtra("StartDate"));
         activityMovieDetailsBinding.textName.setVisibility(View.VISIBLE);
         activityMovieDetailsBinding.textNetworkCountry.setVisibility(View.VISIBLE);
         activityMovieDetailsBinding.textStatus.setVisibility(View.VISIBLE);
+        activityMovieDetailsBinding.textStarted.setVisibility(View.VISIBLE);
     }
 }
