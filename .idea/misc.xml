@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Git/app/src/main/res/drawable/background_fab.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Git/app/src/main/res/layout/activity_main.xml" value="0.15" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Git/app/src/main/res/layout/activity_movie_details.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Git/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Git/app/src/main/res/layout/activity_watchlist.xml" value="0.13269927536231885" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Git/app/src/main/res/layout/item_container_movie_show.xml" value="0.215625" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Git/app/src/main/res/layout/item_container_slider_image.xml" value="0.215625" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/drawable-v24/background_movie_show.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/Git/Movie/app/src/main/res/drawable-v24/ic_search.xml" value="0.1" />
@@ -42,7 +49,7 @@
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git2/app/src/main/res/drawable/background_slider_indicator_active.xml" value="0.2296875" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git2/app/src/main/res/drawable/background_slider_indicator_inactive.xml" value="0.22552083333333334" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git2/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git2/app/src/main/res/layout/activity_movie_details.xml" value="0.1" />
+        <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git2/app/src/main/res/layout/activity_movie_details.xml" value="0.14345991561181434" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git2/app/src/main/res/layout/activity_splash_screen.xml" value="0.209375" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git2/app/src/main/res/layout/item_container_movie_show.xml" value="0.1" />
         <entry key="..\:/Users/rifaa/AndroidStudioProjects/Git2/app/src/main/res/layout/item_container_slider_image.xml" value="0.1" />

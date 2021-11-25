@@ -15,19 +15,27 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.git.R;
 import com.example.git.adapters.ImageSliderAdapter;
 import com.example.git.databinding.ActivityMovieDetailsBinding;
+import com.example.git.models.MovieShow;
 import com.example.git.responses.MovieDetailsResponse;
 import com.example.git.viewmodels.MovieDetailsViewModel;
 
 import java.util.Locale;
 
+import io.reactivex.Scheduler;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.schedulers.Schedulers;
+
 public class MovieDetailsActivity extends AppCompatActivity {
 
     private ActivityMovieDetailsBinding activityMovieDetailsBinding;
     private MovieDetailsViewModel movieDetailsViewModel;
+    private MovieShow movieShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,12 +47,13 @@ public class MovieDetailsActivity extends AppCompatActivity {
     private void doIntialization() {
         movieDetailsViewModel = new ViewModelProvider(this).get(MovieDetailsViewModel.class);
         activityMovieDetailsBinding.imageBack.setOnClickListener(view -> onBackPressed());
+        movieShow = (MovieShow) getIntent().getSerializableExtra("movieShow");
         getMovieDetails();
     }
 
     private void getMovieDetails() {
         activityMovieDetailsBinding.setIsLoading(true);
-        String movieId = String.valueOf(getIntent().getIntExtra("id", -1));
+        String movieId = String.valueOf(movieShow.getId());
         movieDetailsViewModel.getMovieDetails(movieId).observe(
                 this, movieDetailsResponse -> {
                     activityMovieDetailsBinding.setIsLoading(false);
@@ -93,6 +102,17 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             activityMovieDetailsBinding.viewDivider1.setVisibility(View.VISIBLE);
                             activityMovieDetailsBinding.layoutMisc.setVisibility(View.VISIBLE);
                             activityMovieDetailsBinding.viewDivider2.setVisibility(View.VISIBLE);
+
+                            activityMovieDetailsBinding.imagewatchlist.setOnClickListener(view ->
+                                    new CompositeDisposable().add(movieDetailsViewModel.addToWatchlist(movieShow)
+                                            .subscribeOn(Schedulers.io())
+                                            .observeOn(AndroidSchedulers.mainThread())
+                                            .subscribe(()->{
+                                                activityMovieDetailsBinding.imagewatchlist.setImageResource(R.drawable.ic_added);
+                                                Toast.makeText(getApplicationContext(), "Added to watchlist", Toast.LENGTH_SHORT).show();
+                                            })
+                                    ));
+                            activityMovieDetailsBinding.imagewatchlist.setVisibility(View.VISIBLE);
                             loadBasicMovieShowDetails();
                     }
                 }
@@ -149,13 +169,13 @@ public class MovieDetailsActivity extends AppCompatActivity {
         }
     }
     private void loadBasicMovieShowDetails(){
-        activityMovieDetailsBinding.setMovieName(getIntent().getStringExtra("name"));
+        activityMovieDetailsBinding.setMovieName(movieShow.getName());
         activityMovieDetailsBinding.setNetworkCountry(
-                getIntent().getStringExtra("network")+ "(" +
-                        getIntent().getStringExtra("country") + ")"
+                movieShow.getNetwork()+ "(" +
+                       movieShow.getCountry() + ")"
         );
-        activityMovieDetailsBinding.setStatus(getIntent().getStringExtra("status"));
-        activityMovieDetailsBinding.setStartedDate(getIntent().getStringExtra("StartDate"));
+        activityMovieDetailsBinding.setStatus(movieShow.getStatus());
+        activityMovieDetailsBinding.setStartedDate(movieShow.getStartDate() );
         activityMovieDetailsBinding.textName.setVisibility(View.VISIBLE);
         activityMovieDetailsBinding.textNetworkCountry.setVisibility(View.VISIBLE);
         activityMovieDetailsBinding.textStatus.setVisibility(View.VISIBLE);

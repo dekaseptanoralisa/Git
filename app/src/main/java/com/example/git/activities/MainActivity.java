@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity implements MovieShowsListene
                 if(activityMainBinding.movieShowsRecyclerView.canScrollVertically(1)){
                     if (currentPage <= totalAvailablePages){
                         currentPage += 1;
-                        getMostPopularMovieShows();;
+                        getMostPopularMovieShows();
                     }
                 }
 
@@ -90,12 +90,7 @@ public class MainActivity extends AppCompatActivity implements MovieShowsListene
     @Override
     public void onMovieShowsClicked(MovieShow movieShow) {
         Intent intent = new Intent(getApplicationContext(), MovieDetailsActivity.class);
-        intent.putExtra("id", movieShow.getId());
-        intent.putExtra("name", movieShow.getName());
-        intent.putExtra("StartDate", movieShow.getStartDate());
-        intent.putExtra("country", movieShow.getCountry());
-        intent.putExtra("network", movieShow.getNetwork());
-        intent.putExtra("status", movieShow.getStatus());
+        intent.putExtra("movieShow", movieShow);
         startActivity(intent);
     }
 }
