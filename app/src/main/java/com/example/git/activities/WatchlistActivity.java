@@ -13,6 +13,7 @@ import com.example.git.adapters.WatchlistAdapter;
 import com.example.git.databinding.ActivityWatchlistBinding;
 import com.example.git.listeners.WatchlistListener;
 import com.example.git.models.MovieShow;
+import com.example.git.utilities.TempDataHolder;
 import com.example.git.viewmodels.WatchlistViewModel;
 
 import java.util.ArrayList;
@@ -40,6 +41,7 @@ public class WatchlistActivity extends AppCompatActivity implements WatchlistLis
         viewModel = new ViewModelProvider(this).get(WatchlistViewModel.class);
         activityWatchlistBinding.imageBack.setOnClickListener(view -> onBackPressed());
         watchlist = new ArrayList<>();
+        loadWatchlist();
     }
 
     private void loadWatchlist(){
@@ -63,7 +65,10 @@ public class WatchlistActivity extends AppCompatActivity implements WatchlistLis
     @Override
     protected void onResume(){
         super.onResume();
-        loadWatchlist();
+        if(TempDataHolder.IS_WATCHLIST_UPDATE){
+            loadWatchlist();
+            TempDataHolder.IS_WATCHLIST_UPDATE = false;
+        }
     }
 
     @Override

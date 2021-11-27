@@ -24,4 +24,7 @@ public interface MovieShowDao {
 
     @Delete
     Completable removeFromWatchlist(MovieShow movieShow);
+    
+    @Query("SELECT * FROM movieShows WHERE id = :movieShowId")
+    Flowable<MovieShow> getMovieShowFromWatchlist(String movieShowId);
 }

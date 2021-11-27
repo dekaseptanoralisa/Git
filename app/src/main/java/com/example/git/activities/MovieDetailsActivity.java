@@ -22,6 +22,7 @@ import com.example.git.adapters.ImageSliderAdapter;
 import com.example.git.databinding.ActivityMovieDetailsBinding;
 import com.example.git.models.MovieShow;
 import com.example.git.responses.MovieDetailsResponse;
+import com.example.git.utilities.TempDataHolder;
 import com.example.git.viewmodels.MovieDetailsViewModel;
 
 import java.util.Locale;
@@ -36,6 +37,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
     private ActivityMovieDetailsBinding activityMovieDetailsBinding;
     private MovieDetailsViewModel movieDetailsViewModel;
     private MovieShow movieShow;
+    private Boolean isMovieShowAvailableInWatchlist = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +50,20 @@ public class MovieDetailsActivity extends AppCompatActivity {
         movieDetailsViewModel = new ViewModelProvider(this).get(MovieDetailsViewModel.class);
         activityMovieDetailsBinding.imageBack.setOnClickListener(view -> onBackPressed());
         movieShow = (MovieShow) getIntent().getSerializableExtra("movieShow");
+        checkMovieShowInWatchlist();
         getMovieDetails();
+    }
+
+    private void checkMovieShowInWatchlist(){
+        CompositeDisposable compositeDisposable = new CompositeDisposable();
+        compositeDisposable.add(movieDetailsViewModel.getMovieShowFromWatchlist(String.valueOf(movieShow.getId()))
+                .subscribeOn(Schedulers.computation())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(movieShow ->{
+                    isMovieShowAvailableInWatchlist = true;
+                    activityMovieDetailsBinding.imagewatchlist.setImageResource(R.drawable.ic_added);
+                    compositeDisposable.dispose();
+                }));
     }
 
     private void getMovieDetails() {
@@ -103,15 +118,33 @@ public class MovieDetailsActivity extends AppCompatActivity {
                             activityMovieDetailsBinding.layoutMisc.setVisibility(View.VISIBLE);
                             activityMovieDetailsBinding.viewDivider2.setVisibility(View.VISIBLE);
 
-                            activityMovieDetailsBinding.imagewatchlist.setOnClickListener(view ->
-                                    new CompositeDisposable().add(movieDetailsViewModel.addToWatchlist(movieShow)
+                            activityMovieDetailsBinding.imagewatchlist.setOnClickListener(view -> {
+                                CompositeDisposable compositeDisposable = new CompositeDisposable();
+                                if (isMovieShowAvailableInWatchlist){
+                                    compositeDisposable.add(movieDetailsViewModel.removeMovieShowFromWatchlist(movieShow)
+                                            .subscribeOn(Schedulers.computation())
+                                            .observeOn(AndroidSchedulers.mainThread())
+                                            .subscribe(() -> {
+                                                isMovieShowAvailableInWatchlist = false;
+                                                TempDataHolder.IS_WATCHLIST_UPDATE = true;
+                                                activityMovieDetailsBinding.imagewatchlist.setImageResource((R.drawable.ic_watchlist));
+                                                Toast.makeText(getApplicationContext(), "Remove from watchlist", Toast.LENGTH_SHORT).show();
+                                                compositeDisposable.dispose();
+                                            }));
+                                }else{
+                                    compositeDisposable.add(movieDetailsViewModel.addToWatchlist(movieShow)
                                             .subscribeOn(Schedulers.io())
                                             .observeOn(AndroidSchedulers.mainThread())
                                             .subscribe(()->{
+                                                TempDataHolder.IS_WATCHLIST_UPDATE = true;
                                                 activityMovieDetailsBinding.imagewatchlist.setImageResource(R.drawable.ic_added);
                                                 Toast.makeText(getApplicationContext(), "Added to watchlist", Toast.LENGTH_SHORT).show();
+                                                compositeDisposable.dispose();
                                             })
-                                    ));
+                                    );
+                                }
+                            });
+
                             activityMovieDetailsBinding.imagewatchlist.setVisibility(View.VISIBLE);
                             loadBasicMovieShowDetails();
                     }

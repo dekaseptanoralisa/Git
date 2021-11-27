@@ -12,6 +12,7 @@ import com.example.git.repositories.MovieDetailsRepository;
 import com.example.git.responses.MovieDetailsResponse;
 
 import io.reactivex.Completable;
+import io.reactivex.Flowable;
 
 public class MovieDetailsViewModel extends AndroidViewModel {
 
@@ -30,5 +31,13 @@ public class MovieDetailsViewModel extends AndroidViewModel {
 
     public Completable addToWatchlist(MovieShow movieShow){
         return  movieShowsDatabase.movieShowDao().addToWatchlist(movieShow);
+    }
+
+    public Flowable<MovieShow> getMovieShowFromWatchlist(String movieShowId){
+        return movieShowsDatabase.movieShowDao().getMovieShowFromWatchlist(movieShowId);
+    }
+
+    public Completable removeMovieShowFromWatchlist(MovieShow movieShow){
+        return movieShowsDatabase.movieShowDao().removeFromWatchlist(movieShow);
     }
 }
