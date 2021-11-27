@@ -23,5 +23,5 @@ public interface MovieShowDao {
     Completable addToWatchlist (MovieShow movieShow);
 
     @Delete
-    void removeFromWatchlist(MovieShow movieShow);
+    Completable removeFromWatchlist(MovieShow movieShow);
 }

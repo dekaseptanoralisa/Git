@@ -10,6 +10,7 @@ import com.example.git.models.MovieShow;
 
 import java.util.List;
 
+import io.reactivex.Completable;
 import io.reactivex.Flowable;
 
 public class WatchlistViewModel extends AndroidViewModel {
@@ -23,5 +24,9 @@ public class WatchlistViewModel extends AndroidViewModel {
 
     public Flowable<List<MovieShow>> loadWatchlist(){
         return movieShowsDatabase.movieShowDao().getWatchlist();
+    }
+    
+    public Completable removeMovieShowFromWatchlist(MovieShow movieShow){
+        return movieShowsDatabase.movieShowDao().removeFromWatchlist(movieShow);
     }
 }
