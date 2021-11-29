@@ -15,4 +15,6 @@ public interface ApiService {
     @GET ("show-details")
     Call<MovieDetailsResponse> getMovieShowDetails(@Query("q") String movieId);
 
+    @GET("search")
+    Call<MovieShowResponse> searchMovieShow(@Query("q") String query, @Query("page") int page);
 }

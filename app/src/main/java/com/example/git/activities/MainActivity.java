@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity implements MovieShowsListene
             }
         });
         activityMainBinding.imagewatchlist.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), WatchlistActivity.class)));
+        activityMainBinding.imagesearch.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), SearchActivity.class)));
         getMostPopularMovieShows();
     }
 
