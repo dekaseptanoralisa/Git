@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements MovieShowsListene
         super.onCreate(savedInstanceState);
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         doInitialization();
+
     }
 
     private void doInitialization(){
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements MovieShowsListene
         });
         activityMainBinding.imagewatchlist.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), WatchlistActivity.class)));
         activityMainBinding.imagesearch.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), SearchActivity.class)));
+        activityMainBinding.imagesettings.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), SettingsActivity.class)));
         getMostPopularMovieShows();
     }
 

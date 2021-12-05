@@ -8,4 +8,12 @@
     <string name="episodes">Episodes</string>
     <string name="watchlist">Watchlist</string>
     <string name="search_movies">Search Your Favorites Movies</string>
+
+    <string name="alarm_on_toast">Notifications On!</string>
+    <string name="alarm_off_toast">Notifications Off!</string>
+    <string name="notification_title">yourMovies Alert</string>
+    <string name="notification_text">Hey! Go Find Out Your Favorite Movies</string>
+    <string name="alarm_off">OFF</string>
+    <string name="alarm_on">ON</string>
+    <string name="notifications">Notifications</string>
 </resources>

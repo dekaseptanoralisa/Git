@@ -14,6 +14,15 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
+
+        <receiver
+            android:name=".activities.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
+
+        <activity
+            android:name=".activities.SettingsActivity"
+            android:exported="true" />
         <activity
             android:name=".activities.SearchActivity"
             android:exported="true" />

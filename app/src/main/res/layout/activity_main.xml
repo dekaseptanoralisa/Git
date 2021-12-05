@@ -66,6 +66,16 @@
                 android:src="@drawable/ic_search"
                 app:tint="@color/colorTextIcon"/>
 
+            <ImageView
+                android:id="@+id/imagesettings"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:contentDescription="@string/app_name"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_settings"
+                app:tint="@color/colorTextIcon"/>
+
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
